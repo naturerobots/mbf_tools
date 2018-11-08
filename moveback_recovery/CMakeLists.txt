@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(mbf_moveback_recovery)
+project(moveback_recovery)
 
 find_package(catkin REQUIRED
   COMPONENTS
@@ -17,7 +17,7 @@ include_directories(
 )
 
 catkin_package(
-  LIBRARIES mbf_moveback_recovery
+  LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS roscpp pluginlib mbf_msgs mbf_costmap_core tf
 )
 

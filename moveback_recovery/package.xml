@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-    <name>mbf_moveback_recovery</name>
+    <name>moveback_recovery</name>
     <version>0.0.0</version>
     <description>
         This package provides a simple recovery behavior for Move Base Flex which moves back a specified length
