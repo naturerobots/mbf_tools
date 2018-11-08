@@ -1,0 +1,7 @@
+<library path="lib/libmbf_demo_controller">
+  <class name="mbf_demo_controller/DemoController" type="mbf_demo_controller::DemoController" base_class_type="mbf_costmap_core::CostmapController">
+    <description>
+      A demo controller for mbf_costmap_nav
+    </description>
+  </class>
+</library>
