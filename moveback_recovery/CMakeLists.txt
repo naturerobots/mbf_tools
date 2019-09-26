@@ -4,11 +4,12 @@ project(moveback_recovery)
 find_package(catkin REQUIRED
   COMPONENTS
   roscpp
-  tf
+  tf2_ros
   costmap_2d
   mbf_msgs
   mbf_costmap_core
   pluginlib
+  
 )
 
 include_directories(
@@ -18,7 +19,7 @@ include_directories(
 
 catkin_package(
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS roscpp pluginlib mbf_msgs mbf_costmap_core tf
+  CATKIN_DEPENDS roscpp pluginlib mbf_msgs mbf_costmap_core tf2_ros
 )
 
 add_library(${PROJECT_NAME} src/moveback_recovery.cpp)

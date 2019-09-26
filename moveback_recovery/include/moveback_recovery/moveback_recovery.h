@@ -5,6 +5,8 @@
 #include <base_local_planner/costmap_model.h>
 #include <costmap_2d/costmap_2d_ros.h>
 #include <geometry_msgs/Pose2D.h>
+#include <geometry_msgs/Twist.h>
+#include <tf2_ros/buffer.h>
 
 namespace gm=geometry_msgs;
 namespace cmap=costmap_2d;
@@ -35,7 +37,7 @@ public:
     }
 
     /// Initialize the parameters of the behavior
-    virtual void initialize (std::string n, tf::TransformListener* tf,
+    virtual void initialize (std::string n, tf2_ros::Buffer* tf,
                      costmap_2d::Costmap2DROS* global_costmap,
                      costmap_2d::Costmap2DROS* local_costmap);
 
@@ -54,7 +56,7 @@ public:
 
     ros::NodeHandle nh_;
     costmap_2d::Costmap2DROS* local_costmap_;
-    tf::TransformListener* tf_;
+    tf2_ros::Buffer* tf_;
     ros::Publisher cmd_vel_pub_;
     bool initialized_;
     bool canceled_;

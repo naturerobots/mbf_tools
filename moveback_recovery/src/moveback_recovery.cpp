@@ -1,8 +1,7 @@
 #include <pluginlib/class_list_macros.h>
-#include <tf/transform_datatypes.h>
+#include <tf2/utils.h>
 #include <moveback_recovery/moveback_recovery.h>
 #include <mbf_msgs/ExePathResult.h>
-
 
 // register as a RecoveryBehavior plugin
 PLUGINLIB_EXPORT_CLASS(moveback_recovery::MoveBackRecovery, mbf_costmap_core::CostmapRecovery)
@@ -10,7 +9,7 @@ PLUGINLIB_EXPORT_CLASS(moveback_recovery::MoveBackRecovery, mbf_costmap_core::Co
 namespace moveback_recovery
 {
 
-void MoveBackRecovery::initialize(std::string name, tf::TransformListener* tf,
+void MoveBackRecovery::initialize(std::string name, tf2_ros::Buffer* tf,
                                 cmap::Costmap2DROS* /*global_costmap*/, cmap::Costmap2DROS* local_costmap)
 {
     tf_ = tf;
@@ -30,12 +29,13 @@ void MoveBackRecovery::initialize(std::string name, tf::TransformListener* tf,
 // Get pose in local costmap frame
 gm::Pose2D MoveBackRecovery::getCurrentRobotPose() const
 {
-    tf::Stamped<tf::Pose> p;
+    geometry_msgs::PoseStamped p;
     local_costmap_->getRobotPose(p);
     gm::Pose2D pose;
-    pose.x = p.getOrigin().x();
-    pose.y = p.getOrigin().y();
-    pose.theta = tf::getYaw(p.getRotation());
+
+    pose.x = p.pose.position.x;
+    pose.y = p.pose.position.y;
+    pose.theta = tf2::getYaw(p.pose.orientation);
     return pose;
 }
 
