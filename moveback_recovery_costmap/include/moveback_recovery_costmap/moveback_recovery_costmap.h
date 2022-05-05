@@ -67,6 +67,7 @@ public:
     double step_back_timeout_;
     std::string occupied_ths_param_;
     double occupied_ths_;
+    double occupied_ths_crv;
 
 };
 
