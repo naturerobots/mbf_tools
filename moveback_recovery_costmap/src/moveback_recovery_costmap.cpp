@@ -24,7 +24,9 @@ void MoveBackRecoveryCostmap::initialize(std::string name, tf2_ros::Buffer* tf,
     private_nh.param("step_back_timeout", step_back_timeout_, 15.0);
     private_nh.searchParam("smach/occupied_ths", occupied_ths_param_);
     private_nh.param(occupied_ths_param_, occupied_ths_, 45.0);
-    occupied_ths_crv = occupied_ths_*2.55;
+    // occupied_ths_crv = occupied_ths_*2.55;
+    occupied_ths_crv = occupied_ths_;
+
 
     initialized_ = true;
 }
