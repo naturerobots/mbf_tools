@@ -15,7 +15,7 @@ void MoveBackRecoveryCostmap::initialize(std::string name, tf2_ros::Buffer* tf,
     tf_ = tf;
     local_costmap_ = local_costmap;
 
-    cmd_vel_pub_ = nh_.advertise<gm::Twist>("cmd_vel", 10);
+    cmd_vel_pub_ = nh_.advertise<gm::Twist>("aristos_base_control/nav_vel", 10);
     ros::NodeHandle private_nh("~/" + name);
 
     private_nh.param("controller_frequency", controller_frequency_, 20.0);
