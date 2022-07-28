@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>pih_docking</name>
+    <version>0.0.0</version>
+    <description>
+        A peg-in-hole controller for Aristos final docking phase wrapped in a mbf recovery behavior
+    </description>
+    <maintainer email="innovation@todo.todo">innovation</maintainer>
+    <license>3-Clause BSD</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <build_depend>roscpp</build_depend>
+    <build_depend>tf2_ros</build_depend>
+    <build_depend>costmap_2d</build_depend>
+    <build_depend>pluginlib</build_depend>
+    <build_depend>mbf_msgs</build_depend>
+    <build_depend>std_msgs</build_depend>
+    <build_depend>mbf_costmap_core</build_depend>
+
+    <exec_depend>roscpp</exec_depend>
+    <exec_depend>tf2_ros</exec_depend>
+    <exec_depend>costmap_2d</exec_depend>
+    <exec_depend>pluginlib</exec_depend>
+    <exec_depend>mbf_msgs</exec_depend>
+    <exec_depend>std_msgs</exec_depend>
+    <exec_depend>mbf_costmap_core</exec_depend>
+
+    <export>
+        <mbf_costmap_core plugin="${prefix}/pih_docking_plugin.xml" />
+    </export>
+
+</package>

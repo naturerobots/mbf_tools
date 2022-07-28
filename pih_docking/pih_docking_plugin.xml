@@ -1,0 +1,7 @@
+<library path="lib/libpih_docking">
+  <class name="pih_docking/PIHDocking" type="pih_docking::PIHDocking" base_class_type="mbf_costmap_core::CostmapRecovery">
+    <description>
+      A peg-in-hole controller for Aristos final docking phase wrapped in a mbf recovery behavior
+    </description>
+  </class>
+</library>
