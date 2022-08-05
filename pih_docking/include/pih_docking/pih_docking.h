@@ -6,6 +6,7 @@
 #include <geometry_msgs/Twist.h>
 #include <tf2_ros/buffer.h>
 #include <std_msgs/Bool.h>
+#include <ikh_ros_msgs/Labjack_dout.h>
 
 namespace gm=geometry_msgs;
 namespace cmap=costmap_2d;
@@ -52,7 +53,8 @@ public:
     uint32_t moveBack() const;
     uint32_t publishStop() const;
     double getCurrentDiff(const gm::Pose2D referencePose) const;
-    void io_dock_cb(const std_msgs::Bool msg);
+    // void io_dock_cb(const std_msgs::Bool msg);
+    void io_dock_cb(const ikh_ros_msgs::Labjack_dout msg);
 
     ros::NodeHandle nh_;
     costmap_2d::Costmap2DROS* local_costmap_;

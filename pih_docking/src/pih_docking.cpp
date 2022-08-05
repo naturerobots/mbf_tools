@@ -33,9 +33,14 @@ void PIHDocking::initialize(std::string name, tf2_ros::Buffer* tf,
     initialized_ = true;
 }
 
-void PIHDocking::io_dock_cb(const std_msgs::Bool msg)
+// void PIHDocking::io_dock_cb(const std_msgs::Bool msg)
+// {
+//     io_dock = msg.data;
+// }
+
+void PIHDocking::io_dock_cb(const ikh_ros_msgs::Labjack_dout msg)
 {
-    io_dock = msg.data;
+    io_dock = msg.state;
 }
 
 
